@@ -148,6 +148,7 @@ function renderProducts(ArrayProducts){
 };
 
 renderProducts(productList);
+// 
 // / CARDS
 
 
