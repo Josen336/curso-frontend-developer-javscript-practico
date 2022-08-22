@@ -4,18 +4,23 @@ const DesktopMenu = document.querySelector('.desktop-menu');
 document.querySelector('.navbar-email').addEventListener("click", function() {
     DesktopMenu.classList.toggle('inactive-desktop__menu');
     
-    const isProductDetailClosed= ProdectDetail.classList.contains('inactive-movil__menu');
-
-    if (!isProductDetailClosed){
-        ProdectDetail.classList.add('inactive-movil__menu');
+    const isShoppingClosed= shoppindCartContainer.classList.contains('inactive-movil__menu');
+    const isProductDetail = productDetail.classList.contains('inactive-desktop__menu');
+    
+    if (!isShoppingClosed){
+        shoppindCartContainer.classList.add('inactive-movil__menu');
     }
+    if(!isProductDetail){
+        productDetail.classList.add('inactive-desktop__menu'); 
+    }
+
 })
 // /INACTIVE DESKTOP MENU
 
 
 
 
-
+ 
 
 
 
@@ -28,10 +33,14 @@ const MovilMenu = document.querySelector('.mobile-menu');
 
 document.querySelector('.burger-movil__menu').addEventListener("click",function() {
     MovilMenu.classList.toggle('inactive-movil__menu');
-    const isProductDEtailClosed= ProdectDetail.classList.toggle('inactive-movil__menu');
+    const isShoppingClosed= shoppindCartContainer.classList.toggle('inactive-movil__menu');
+    const isProductDetail = productDetail.classList.toggle('inactive-desktop__menu');
+    if (!isShoppingClosed){
+        shoppindCartContainer.classList.add('inactive-movil__menu');
+    }
 
-    if (!isProductDEtailClosed){
-        ProdectDetail.classList.add('inactive-movil__men');
+    if (!isProductDetail){
+        productDetail.classList.add('inactive-desktop__menu');
     }
 })
 
@@ -48,30 +57,56 @@ document.querySelector('.burger-movil__menu').addEventListener("click",function(
 
 
 
-//INACTIVE ASIDE PRODUCT DETAIL
-const ProdectDetail=document.querySelector('.product-detail');
+//INACTIVE SHOPPINGDETAILPRODUCT
+const shoppindCartContainer=document.querySelector('#shoppindCartContainer');
 
 document.querySelector('.navbar-shopping-cart').addEventListener("click", function(){
     const isMobilMenuClosed= MovilMenu.classList.contains('inactive-movil__menu');
     const isDesktopMenuClosed = DesktopMenu.classList.contains('inactive-desktop__menu');
-    
+    const isProductDetail = productDetail.classList.toggle('inactive-desktop__menu');
 
 
     if (!isMobilMenuClosed){
          MovilMenu.classList.add('inactive-movil__menu');    
-    }
+    };
     if(!isDesktopMenuClosed){
         DesktopMenu.classList.add('inactive-desktop__menu');
+    };
+
+    if(!isProductDetail){
+        productDetail.classList.add('inactive-desktop__menu');
     }
     
 
-    ProdectDetail.classList.toggle('inactive-movil__menu');
+    shoppindCartContainer.classList.toggle('inactive-movil__menu');
     
-})
-// /INACTIVE ASIDE PRODUCT DETAIL
+});
+// /INACTIVE ASIDE SHOPPINGDETAILPRODUCT
 
 
 
+
+// ACTIVE PRODUCT DETAIL
+const productDetail = document.querySelector('#productDetail');
+function openProductDetailAside(){
+    productDetail.classList.remove('inactive-desktop__menu');
+    const isProductDEtailClosedShoppping = productDetail.classList.contains('inactive-desktop__menu');
+    const isDesktopMenuClosed = DesktopMenu.classList.contains('inactive-desktop__menu');
+
+    if (!isProductDEtailClosedShoppping){
+        document.querySelector('.product-detail-close').addEventListener("click", function(){
+            productDetail.classList.add('inactive-desktop__menu');
+        });
+    }
+    
+
+    
+}
+
+
+// INACTIVE PRODUCT DETAIL
+// /INACTIVE PRODUCT DETAIL
+// /ACTIVE PRODUCT DETAIL
 
 
 // CARDS
@@ -106,9 +141,11 @@ function renderProducts(ArrayProducts){
     
     
         // productList= {name,price,img} -> product.img
+        
         const ProductImg=document.createElement('img');
         ProductImg.setAttribute('src',product.Image);
-    
+        ProductImg.addEventListener('click',openProductDetailAside);
+
         const productInfo=document.createElement('div');
         productInfo.classList.add('product-info');
     
@@ -130,7 +167,7 @@ function renderProducts(ArrayProducts){
         const productInfoFigure=document.createElement('Figure');
         const productImgCart=document.createElement('img');
         productImgCart.setAttribute('src','./icons/bt_add_to_cart.svg' );
-    
+       
         productInfoFigure.appendChild(productImgCart);
       
     
@@ -148,7 +185,11 @@ function renderProducts(ArrayProducts){
 };
 
 renderProducts(productList);
-// 
+
+
+
+
+
 // / CARDS
 
 
