@@ -1,0 +1,33 @@
+
+
+.primary-button.uno::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: var(--hospital-green-dark);
+    z-index: 1;
+    left: 0;
+    top: 50px;
+    transition: .3s all ease-in-out;
+}
+
+.primary-button.uno:hover::after{
+    top: 0;
+}
+
+.Secondary-button.add-to-cart-button::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background: var(--hospital-green-dark);
+    z-index: 1;
+    transition: .1s all ease-in-out;
+}
+
+.Secondary-button.add-to-cart-button:hover::after{
+    top: 0;
+}

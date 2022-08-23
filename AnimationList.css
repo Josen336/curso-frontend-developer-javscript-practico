@@ -1,0 +1,18 @@
+.List-Nav__Items.List::after{
+   content: "";
+   background:var(--hospital-green);
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   left: 0;
+   top: -50px;
+   transition: all .3s ease-in-out;
+   z-index: 1;
+}
+
+.List-Nav__Items.List:hover::after{
+    top: 0;
+    border-radius: 1px solid var(--hospital-green);
+    transition: .3s all ease;
+    
+}
