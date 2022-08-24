@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --very-light-pink: #C7C7C7;
+    --text-input-field: #F7F7F7;
+    --hospital-green: #ACD9B2;
+    --hospital-green-dark: #498f52;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+    }
+    body {
+        margin: 0;
+        font-family: 'Quicksand', sans-serif;
+    } 
+
+
+
+    .fondo{
+        height: 200px;
+        width: 100vw;
+        background: linear-gradient(90deg, rgba(73,143,82,1) 0%, rgba(172,217,178,1) 44%, rgba(113,255,131,1) 100%);
+       
+    }
+    /* NAV ITEMS */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 24px;
+        border-bottom: 1px solid var(--very-light-pink);
+        
+    }
+   
+    .burger-movil__menu {
+        display: none;
+    }
+    .logo {
+        width: 100px;
+    }
+    .navbar-left ul,
+    .navbar-right ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        height: 60px;
+    }
+    .navbar-left {
+        display: flex;
+    }
+    .navbar-left ul {
+        margin-left: 12px;
+    }
+    .List-Nav__Items:nth-child(1){
+        width: 30px;
+    }
+    .List-Nav__Items:nth-child(2){
+        width: 60px;
+    }
+    .List-Nav__Items:nth-child(5){
+        width: 50px;
+    }
+    .List-Nav__Items:nth-child(6){
+        width: 50px;
+        
+    }
+    .List-Nav__Items{
+        width: 90px;
+        height: 20px;
+        border-radius: 5px;
+        position: relative;
+        padding:8px;
+        overflow: hidden;
+        transition: .3s all ease;
+    }
+
+    .List-Nav__Items .Items{
+        position: relative;
+        color: var(--hospital-green     );
+        font-weight: 500;
+        text-decoration: none;
+        font-size: var(--md);
+        transition: all .3s ease;
+        z-index: 2;
+    }
+
+    .List-Nav__Items .Items:hover{
+        color: #FFFFFF;
+    }
+
+
+    .navbar-right ul li a{
+        text-decoration: none;
+        color: var(--very-light-pink);
+        border: 1px solid var(--white);
+        padding: 8px;
+        border-radius: 8px;
+        position: relative;
+    }
+    .navbar-right ul li a:hover {
+        border: 1px solid var(--hospital-green);
+        color: var(--hospital-green);
+    }
+    .navbar-email{
+        color: var(--very-light-pink);
+        font-size: var(--sm);
+        margin-right: 12px;
+        transition: all 1s linear;
+        
+        
+    }
+
+
+
+    .navbar-email:hover{
+        cursor: pointer;
+        transform: skew(200px);
+        transition: all 3s linear;
+        color: #000000;
+        font-size: 15px;
+    }
+
+    .navbar-email:active{
+        color: var(--back);
+    }
+
+    .animation:hover{
+        transition: all 10s linear;
+        transform:scale(1.0);
+        transform: skew(200px);
+        
+    }
+    .navbar-shopping-cart {
+        position: relative;
+    }
+    .shopping-card__img{
+        margin-right: 50px;
+    }
+    .navbar-shopping-cart div {
+        width: 16px;
+        height: 16px;
+        background-color: var(--hospital-green);
+        border-radius: 50%;
+        font-size: var(--sm);
+        font-weight: bold;
+        position: absolute;
+        top: -6px;
+        right: -3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 50px;
+    }
+    /* /NAV ITEMS */
+
+
+
+
+    /* DESKTOP MENU */
+
+    .desktop-menu {
+        position: absolute;
+        top: 61px;
+        right: 60px;
+        background: var(--white);
+        width: 100px;
+        height: auto;
+        border: 1px solid var(--very-light-pink);
+        border-radius: 0px 0px 6px 6px;
+        padding: 20px 20px 0 20px;  
+        transition: all 1s linear;
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    }
+    .desktop-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .desktop-menu ul li {
+        text-align: end;
+    }
+    .desktop-menu ul li:nth-child(1),
+    .desktop-menu ul li:nth-child(2) {
+        font-weight: bold;
+    }
+    .desktop-menu ul li:last-child {
+        padding-top: 20px;
+        border-top: 1px solid var(--very-light-pink);
+    }
+    .desktop-menu ul li:last-child a {
+        color: var(--hospital-green);
+        font-size: var(--sm);
+    }
+    .desktop-menu ul li a {
+        color: var(--back);
+        text-decoration: none;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+
+
+    /* /DESKTOP MENU */
+
+    /* HIDE DESKTOP MENU */
+    .inactive-desktop__menu{
+        display: none;
+    }
+    /* /HIDE DESKTOP MENU */
+
+
+
+    /* MOBILE MENU */
+    .mobile-menu {
+        background-color: var(--white);
+        position: absolute;
+        top: 60px;
+        padding-left: 24px;
+        left:0;
+        width: calc(100% - 24px);
+    }
+    .mobile-menu a {
+        text-decoration: none;
+        color: var(--black);
+        font-weight: bold;
+        /* margin-bottom: 24px; */
+    }
+    .mobile-menu ul {
+        padding: 0;
+        margin: 24px 0 0;
+        list-style: none;
+    }
+    .mobile-menu ul:nth-child(1) {
+        border-bottom: 1px solid var(--very-light-pink);
+    }
+    .mobile-menu ul li {
+        margin-bottom: 24px;
+    }
+    .email {
+        font-size: var(--sm);
+        font-weight: 300 !important;
+    }
+    .sign-out {
+        font-size: var(--sm);
+        color: var(--hospital-green) !important;
+    }
+    /* /MOBILE MENU */
+
+    /* HIDE MOVIL MENU */
+    .inactive-movil__menu{
+        display: none;
+    }
+    /* /HIDE MOVIL MENU */
+
+
+
+
+
+    aside{
+        position: absolute;
+        background-color: var(--white);
+        width: 360px;
+        box-sizing: border-box;
+        right: 0;
+    }
+    /* ASIDE PRODUCT DETAIL AND CARRITO */
+    #shoppingCartContainer{
+        padding: 0 24px;
+    }
+
+    .title-container {
+        display: flex;
+    }
+    .title-container img {
+        transform: rotate(180deg);
+        margin-right: 14px;
+    }
+    .title {
+        font-size: var(--md);
+        font-weight: bold;
+    }
+    .order {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 16px;
+        align-items: center;
+        background-color: var(--text-input-field);
+        margin-bottom: 24px;
+        border-radius: 8px;
+        padding: 0 24px;
+    }
+    .order p:nth-child(1) {
+        display: flex;
+        flex-direction: column;
+    }
+    .order p span:nth-child(1) {
+        font-size: var(--md);
+        font-weight: bold;
+    }
+    .order p:nth-child(2) {
+        text-align: end;
+        font-weight: bold;
+    }
+
+    .shopping-cart {
+        display: grid;
+        grid-template-columns: auto 1fr auto auto;
+        gap: 16px;
+        margin-bottom: 24px;
+        align-items: center;
+    }
+    .shopping-cart figure {
+        margin: 0;
+    }
+    .shopping-cart figure img {
+        width: 70px;
+        height: 70px;
+        border-radius: 20px;
+        object-fit: cover;
+        margin-left: 10px;
+        
+    }
+
+    .Shopping-Cart__Close{
+        margin-right: 15px;
+    }
+    .shopping-cart p:nth-child(2) {
+        color: var(--very-light-pink);
+    }
+    .shopping-cart p:nth-child(3) {
+        font-size: var(--md);
+        font-weight: bold;
+    }
+    .primary-button {
+        background-color: var(--hospital-green);
+        border-radius: 8px;
+        border: none;
+        color: var(--white);
+        width: 80%;
+        cursor: pointer;
+        font-size: var(--md);
+        font-weight: 500;
+        height: 50px;
+        text-align: center;
+        position: relative;
+        text-transform: uppercase;
+        transition: .3s ease all;
+        overflow: hidden;
+        margin-left: 10%;
+    }
+
+    .primary-button span{
+        position: relative;
+        z-index: 2;
+        transition: .3s all ease;
+    }
+
+
+
+
+
+    /* /ASIDE PRODUCT DETAIL AND CARRITO */
+
+
+    /* ASIDE PRODUCT */
+    .Strong-product__bike{
+        color: #498f52;
+    }
+    .product-detail-close {
+        background: var(--white);
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        z-index: 2;
+        padding: 12px;
+        border-radius: 50%;
+    }
+
+    .product-detail-close img{
+        margin-bottom:10px ;
+    }
+    .product-detail-close:hover {
+        cursor: pointer;
+    }
+    .ImagenProduct{
+        
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        
+    }
+    #productDetail .product-info {
+        margin: 24px 24px 0 24px;
+    }
+    #productDetail .product-info p:nth-child(1) {
+        font-weight: bold;
+        font-size: var(--md);
+        margin-top: 0;
+        margin-bottom: 4px;
+    }
+    #productDetail .product-info p:nth-child(2) {
+        color: var(--very-light-pink);
+        font-size: var(--md);
+        margin-top: 0;
+        margin-bottom: 36px;
+    }
+    #productDetail .product-info p:nth-child(3) {
+        color: var(--very-light-pink);
+        font-size: var(--sm);
+        margin-top: 0;
+        margin-bottom: 36px;
+    }
+    .Secondary-button{
+        background-color: var(--hospital-green);
+        border-radius: 8px;
+        border: none;
+        color: var(--white);
+        width: 100%;
+        cursor: pointer;
+        font-size: var(--md);
+        font-weight: bold;
+        height: 50px;
+        position: relative;
+        overflow: hidden;
+        transition: .3s all ease;
+    }
+    .add-to-cart-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .3s all ease;
+        transition-delay: .2s all ease;
+    }
+
+    .add-to-cart-button .ImgIcon{
+        height: 40px;
+        position: relative;
+        z-index: 2;
+        transition: all 1s ease;
+    }
+    .add-to-cart-button span{
+        z-index: 2;
+        position: relative;
+    }
+
+    .DisplayNone{
+        display: none;
+        transition: all .1s ease;
+    }
+    /* /ASIDE PRODUCT */
+
+
+
+
+
+
+
+
+    /* CARDS */
+    .cards-container {
+        margin-top:50px ;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 240px);
+        gap: 26px;
+        place-content: center;
+    }
+    .product-card {
+        width: 240px;
+        
+    }
+    .product-card img {
+        width: 240px;
+        height: 240px;
+        border-radius: 20px;
+        object-fit: cover;
+    }
+    .product-card .product-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 12px;
+    }
+    .product-card .product-info figure {
+        margin: 0;
+    }
+    .product-card .product-info figure img {
+        width: 35px;
+        height: 35px;
+    }
+    .product-card .product-info div p:nth-child(1) {
+        font-weight: bold;
+        font-size: var(--md);
+        margin-top: 0;
+        margin-bottom: 4px;
+    }
+    .product-card .product-info div p:nth-child(2) {
+        font-size: var(--sm);
+        margin-top: 0;
+        margin-bottom: 0;
+        color: var(--very-light-pink);
+    }
+    /*/ CARDS */
+
+
+
+    .primary-button.uno::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: var(--hospital-green-dark);
+    z-index: 1;
+    left: 0;
+    top: 50px;
+    transition: .3s all ease-in-out;
+    }
+
+    .primary-button.uno:hover::after{
+        top: 0;
+    }
+
+    .Secondary-button.add-to-cart-button::after{
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background: var(--hospital-green-dark);
+        z-index: 1;
+        transition: .1s all ease-in-out;
+    }
+
+    .Secondary-button.add-to-cart-button:hover::after{
+        top: 0;
+    }
+
+    .List-Nav__Items.List::after{
+        content: "";
+        background:var(--hospital-green);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: -50px;
+        transition: all .3s ease-in-out;
+        z-index: 1;
+    }
+
+    .List-Nav__Items.List:hover::after{
+        top: 0;
+        border-radius: 1px solid var(--hospital-green);
+        transition: .3s all ease;
+        
+    }
+
+   
+    
+    @media (max-width: 827px) {
+        .burger-movil__menu{
+        display: block;
+        }
+        .navbar-left ul {
+        display: none;
+        }
+        .navbar-email {
+        display: none;
+        }
+
+        .desktop-menu{
+            display: none;
+        }
+
+        
+        .cards-container {
+            grid-template-columns: repeat(auto-fill, 140px);
+        }
+        .product-card {
+            width: 140px;
+        }
+        .product-card img {
+            width: 140px;
+            height: 140px;
+        }
+        #shoppindCartContainer{
+            margin-right: 0px;
+        }
+
+        #productDetail{
+            position: absolute;
+            left: 0;
+            right: 0px;
+            
+            width: 400px;
+            max-width: 90%;
+            border-radius: 10px;
+            border: 5px solid white;
+            
+        }
+        
+
+        .capa{
+            background: rgba(0,0,0,0.16);
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+        }
+        
+        .ImagenProduct{
+            overflow: hidden;
+            height: 300px;
+            
+        }
+    }
+
+    @media (min-width: 828px) {
+        .mobile-menu{
+            display: none;
+    }
+    }
+
+
+
+
+
+    </style>
+</head>
+<body>
+        <!-- NAV ITEMS -->
+   
+        <nav>
+            
+                <img src="./icons/icon_menu.svg" alt="menu" class="burger-movil__menu">
+
+                <div class="navbar-left">
+                <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
+
+                <ul>
+                    <li class="List-Nav__Items List">
+                    <a class="Items" href="/">All</a>
+                    </li>
+                    <li class="List-Nav__Items List">
+                    <a class="Items" href="/">Clothes</a>
+                    </li>
+                    <li class="List-Nav__Items List">
+                    <a class="Items" href="/">Electronics</a>
+                    </li>
+                    <li class="List-Nav__Items List">
+                    <a class="Items" href="/">Furnitures</a>
+                    </li>
+                    <li class="List-Nav__Items List">
+                    <a class="Items" href="/">Toys</a>
+                    </li>
+                    <li class="List-Nav__Items List">
+                    <a class="Items" href="/">Others</a>
+                    </li>
+                </ul>
+                </div>
+
+                <div class="navbar-right">
+                <ul class="Container-list__Account">
+                    <li class="navbar-email">platzi@example.com</li>
+                    <li class="navbar-shopping-cart">
+                    <img src="./icons/icon_shopping_cart.svg" alt="shopping cart" class="shopping-card__img">
+                    <div>2</div>
+                    </li>
+                </ul>
+            <!-- /NAV ITEMS -->
+
+            <!-- DESKTOP MENU -->
+                <div class="desktop-menu inactive-desktop__menu">
+                    <ul>
+                    <li>
+                        <a href="/" class="title">My orders</a>
+                    </li>
+                
+                    <li>
+                        <a href="/">My account</a>
+                    </li>
+                
+                    <li>
+                        <a href="/">Sign out</a>
+                    </li>
+                    </ul>
+                </div>
+            <!--/ DESKTOP MENU -->
+
+            <!-- MOBILE MENU -->
+                <div class="mobile-menu inactive-movil__menu">
+                    <ul>
+                    <li>
+                        <a href="/">CATEGORIES</a>
+                    </li>
+                    <li>
+                        <a href="/">All</a>
+                    </li>
+                    <li>
+                        <a href="/">Clothes</a>
+                    </li>
+                    <li>
+                        <a href="/">Electronics</a>
+                    </li>
+                    <li>
+                        <a href="/">Furnitures</a>
+                    </li>
+                    <li>
+                        <a href="/">Toys</a>
+                    </li>
+                    <li>
+                        <a href="/">Other</a>
+                    </li>
+                    </ul>
+
+                    <ul>
+                    <li>
+                        <a href="/">My orders</a>
+                    </li>
+                    <li>
+                        <a href="/">My account</a>
+                    </li>
+                    </ul>
+
+                    <ul>
+                    <li>
+                        <a href="/" class="email">platzi@example.com</a>
+                    </li>
+                    <li>
+                        <a href="/" class="sign-out">Sign out</a>
+                    </li>
+                    </ul>
+                </div>
+        <!-- /MOBILE MENU -->
+            </div>
+        </nav>
+       
+
+
+
+
+        <!-- ASIDE -->
+        <aside id="shoppindCartContainer" class="inactive-movil__menu">
+            <div class="title-container">
+              <img src="./icons/flechita.svg" alt="arrow">
+              <p class="title">My order</p>
+            </div>
+        
+            <div class="my-order-content">
+              <div class="shopping-cart">
+                <figure>
+                  <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
+                </figure>
+                <p>Bike</p>
+                <p>$30,00</p>
+                <img src="./icons/icon_close.png" alt="close" class="Shopping-Cart__Close">
+              </div>
+        
+              <div class="shopping-cart">
+                <figure>
+                  <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
+                </figure>
+                <p>Bike</p>
+                <p>$30,00</p>
+                <img src="./icons/icon_close.png" alt="close" class="Shopping-Cart__Close">
+              </div>
+        
+              <div class="shopping-cart">
+                <figure>
+                  <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
+                </figure>
+                <p>Bike</p>
+                <p>$30,00</p>
+                <img src="./icons/icon_close.png" alt="close" class="Shopping-Cart__Close">
+              </div>
+        
+              <div class="order">
+                <p>
+                  <span>Total</span>
+                </p>
+                <p>$560.00</p>
+              </div>
+        
+              <button class="primary-button uno">
+                <span>Checkout</span>
+              </button>
+            </div>
+          </div>
+        </aside>
+        <!-- /ASIDE -->
+
+        <!-- ASIDE PRODUCT -->
+        <div id="ActiveCapa"">
+          <aside id="productDetail" class="inactive-desktop__menu">
+            <div class="container">
+                <div class="product-detail-close">
+                    <img src="./icons/icon_close.png" alt="close">
+                  </div>
+                  <img class="ImagenProduct" src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
+                  <div class="product-info">
+                    <p>$35,00</p>
+                    <p>Bike</p>
+                    <p>With its practical position, this <strong class="Strong-product__bike">bike</strong> also fulfills a decorative function, add your hall or workspace.</p>
+                    <button class="Secondary-button add-to-cart-button" >
+                      <img class="ImgIcon" src="./icons/bt_add_to_cart.png" alt="" id="ImgGreenLigth">
+                      <img class="ImgIcon DisplayNone" src="./icons/bt_add_to_cart_dark.png" alt="" id="ImgGreenDark" >
+    
+                      <span>Add to cart</span>
+                    </button>
+                  </div>
+            </div>              
+           </aside>
+        </div>
+        <!-- /ASIDE PRODUCTS -->
+
+        <!-- CARDS -->
+        <section class="main-container">
+            <div class="cards-container">
+                
+            </div>
+        </section>
+        <!-- /CARDS -->
+        
+        <script>
+            // INACTIVE DESKTOP MENU
+            const DesktopMenu = document.querySelector('.desktop-menu');
+            const Click  = document.querySelector('.navbar-email');
+            document.querySelector('.navbar-email').addEventListener("click", function(e) {
+                console.log({e})
+                DesktopMenu.classList.toggle('inactive-desktop__menu');
+                const ClasAnimation=DesktopMenu.classList.toggle("animation");
+                const isShoppingClosed= shoppindCartContainer.classList.contains('inactive-movil__menu');
+                const isProductDetail = productDetail.classList.contains('inactive-desktop__menu');
+                const Capa=document.querySelector('#ActiveCapa');
+                Capa.classList.remove('capa');
+                
+                if (!isShoppingClosed){
+                    shoppindCartContainer.classList.add('inactive-movil__menu');
+                }
+                if(!isProductDetail){
+                    productDetail.classList.add('inactive-desktop__menu'); 
+                    
+                }
+
+            });
+
+
+
+
+
+            // /INACTIVE DESKTOP MENU
+
+
+
+
+            
+
+
+
+
+
+
+
+            // INACTIVE MOVIL MENU
+            const MovilMenu = document.querySelector('.mobile-menu');
+
+            document.querySelector('.burger-movil__menu').addEventListener("click",function() {
+                MovilMenu.classList.toggle('inactive-movil__menu');
+                const isShoppingClosed= shoppindCartContainer.classList.toggle('inactive-movil__menu');
+                const isProductDetail = productDetail.classList.toggle('inactive-desktop__menu');
+                const Capa=document.querySelector('#ActiveCapa');
+                Capa.classList.remove('capa');
+                if (!isShoppingClosed){
+                    shoppindCartContainer.classList.add('inactive-movil__menu');
+                }
+
+                if (!isProductDetail){
+                    productDetail.classList.add('inactive-desktop__menu');
+                    
+                }
+            })
+
+            // /INACTIVE MOVIL MENU
+
+
+
+
+
+
+
+
+
+
+
+
+            //INACTIVE SHOPPINGDETAILPRODUCT
+            const shoppindCartContainer=document.querySelector('#shoppindCartContainer');
+
+            document.querySelector('.navbar-shopping-cart').addEventListener("click", function(){
+                const isMobilMenuClosed= MovilMenu.classList.contains('inactive-movil__menu');
+                const isDesktopMenuClosed = DesktopMenu.classList.contains('inactive-desktop__menu');
+                const isProductDetail = productDetail.classList.toggle('inactive-desktop__menu');
+                const Capa=document.querySelector('#ActiveCapa');
+                Capa.classList.remove('capa');
+
+                if (!isMobilMenuClosed){
+                    MovilMenu.classList.add('inactive-movil__menu');    
+                };
+                if(!isDesktopMenuClosed){
+                    DesktopMenu.classList.add('inactive-desktop__menu');
+                    DesktopMenu.classList.remove('animation')
+                };
+
+                if(!isProductDetail){
+                    productDetail.classList.add('inactive-desktop__menu');
+                
+                }
+                
+
+                shoppindCartContainer.classList.toggle('inactive-movil__menu');
+                
+            });
+            // /INACTIVE ASIDE SHOPPINGDETAILPRODUCT
+
+
+
+
+            // ACTIVE PRODUCT DETAIL
+            const productDetail = document.querySelector('#productDetail');
+            function openProductDetailAside(){
+                productDetail.classList.remove('inactive-desktop__menu');
+                const isProductDEtailClosedShoppping = shoppindCartContainer.classList.contains('inactive-desktop__menu');
+                const isDesktopMenuClosed = DesktopMenu.classList.contains('inactive-desktop__menu');
+                const Capa=document.querySelector('#ActiveCapa');
+                if (!isProductDEtailClosedShoppping){
+                    shoppindCartContainer.classList.add('inactive-movil__menu');
+                    DesktopMenu.classList.add('inactive-desktop__menu');
+                    Capa.classList.add('capa');
+                    document.querySelector('.product-detail-close').addEventListener("click", function(){
+                        productDetail.classList.add('inactive-desktop__menu');
+                        Capa.classList.remove('capa');
+                        
+                    });
+                }
+                
+
+                
+            }
+
+
+            // INACTIVE PRODUCT DETAIL
+            // /INACTIVE PRODUCT DETAIL
+            // /ACTIVE PRODUCT DETAIL
+
+
+            // CARDS
+            const productList=[];
+
+            productList.push({
+                name: 'Bike',
+                price: '120',
+                Image:'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+            });
+
+            productList.push({
+                name: 'Screen',
+                price: '220',
+                Image:'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+            });
+
+            productList.push({
+                name: 'Computer',
+                price: '500',
+                Image:'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+            });
+
+
+
+            const cardsConteiner=document.querySelector('.cards-container')
+
+            function renderProducts(ArrayProducts){
+                for (product of ArrayProducts){
+                    const productCard=document.createElement('div');
+                    productCard.classList.add('product-card');
+                
+                
+                    // productList= {name,price,img} -> product.img
+                    
+                    const ProductImg=document.createElement('img');
+                    ProductImg.setAttribute('src',product.Image);
+                    ProductImg.addEventListener('click',openProductDetailAside);
+
+                    const productInfo=document.createElement('div');
+                    productInfo.classList.add('product-info');
+                
+                
+                
+                    const productInfoDiv=document.createElement('div');
+                
+                    const productPrice=document.createElement('p');
+                    productPrice.innerText='$' + product.price;
+                
+                    const productName=document.createElement('p');
+                    productName.innerText=product.name;
+                
+                    productInfoDiv.appendChild(productPrice);
+                    productInfoDiv.appendChild(productName);
+                
+                
+                
+                    const productInfoFigure=document.createElement('Figure');
+                    const productImgCart=document.createElement('img');
+                    productImgCart.setAttribute('src','./icons/bt_added_to_cart_estruct.png');
+                
+                    productInfoFigure.appendChild(productImgCart);
+                
+                
+                    productInfo.appendChild(productInfoDiv);
+                    productInfo.appendChild(productInfoFigure);
+                
+                
+                    productCard.appendChild(ProductImg);
+                    productCard.appendChild(productInfo);
+                
+                
+                    cardsConteiner.appendChild(productCard);
+                // NOTARIO MAQUETACION CARDS...
+                }
+            };
+
+            renderProducts(productList);
+
+
+
+            const ImgLigthGreen= document.querySelector('#ImgGreenLigth');
+            const ImgDarkGreen = document.querySelector('#ImgGreenDark');
+
+            document.querySelector('.Secondary-button').onmouseover = function(){
+                ImgLigthGreen.classList.add("DisplayNone");
+                ImgDarkGreen.classList.remove("DisplayNone");
+            };
+
+            document.querySelector('.Secondary-button').onmouseout =function(){
+                ImgLigthGreen.classList.remove("DisplayNone");
+                ImgDarkGreen.classList.add("DisplayNone");
+            }
+
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+            // / CARDS
+        </script>
+</body>
+</html>

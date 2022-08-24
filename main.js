@@ -7,12 +7,15 @@ document.querySelector('.navbar-email').addEventListener("click", function(e) {
     const ClasAnimation=DesktopMenu.classList.toggle("animation");
     const isShoppingClosed= shoppindCartContainer.classList.contains('inactive-movil__menu');
     const isProductDetail = productDetail.classList.contains('inactive-desktop__menu');
+    const Capa=document.querySelector('#ActiveCapa');
+    Capa.classList.remove('capa');
     
     if (!isShoppingClosed){
         shoppindCartContainer.classList.add('inactive-movil__menu');
     }
     if(!isProductDetail){
         productDetail.classList.add('inactive-desktop__menu'); 
+        
     }
 
 });
@@ -41,12 +44,15 @@ document.querySelector('.burger-movil__menu').addEventListener("click",function(
     MovilMenu.classList.toggle('inactive-movil__menu');
     const isShoppingClosed= shoppindCartContainer.classList.toggle('inactive-movil__menu');
     const isProductDetail = productDetail.classList.toggle('inactive-desktop__menu');
+    const Capa=document.querySelector('#ActiveCapa');
+    Capa.classList.remove('capa');
     if (!isShoppingClosed){
         shoppindCartContainer.classList.add('inactive-movil__menu');
     }
 
     if (!isProductDetail){
         productDetail.classList.add('inactive-desktop__menu');
+        
     }
 })
 
@@ -70,7 +76,8 @@ document.querySelector('.navbar-shopping-cart').addEventListener("click", functi
     const isMobilMenuClosed= MovilMenu.classList.contains('inactive-movil__menu');
     const isDesktopMenuClosed = DesktopMenu.classList.contains('inactive-desktop__menu');
     const isProductDetail = productDetail.classList.toggle('inactive-desktop__menu');
-
+    const Capa=document.querySelector('#ActiveCapa');
+    Capa.classList.remove('capa');
 
     if (!isMobilMenuClosed){
          MovilMenu.classList.add('inactive-movil__menu');    
@@ -82,6 +89,7 @@ document.querySelector('.navbar-shopping-cart').addEventListener("click", functi
 
     if(!isProductDetail){
         productDetail.classList.add('inactive-desktop__menu');
+       
     }
     
 
@@ -97,10 +105,13 @@ document.querySelector('.navbar-shopping-cart').addEventListener("click", functi
 const productDetail = document.querySelector('#productDetail');
 function openProductDetailAside(){
     productDetail.classList.remove('inactive-desktop__menu');
-    const isProductDEtailClosedShoppping = productDetail.classList.contains('inactive-desktop__menu');
+    const isProductDEtailClosedShoppping = shoppindCartContainer.classList.contains('inactive-desktop__menu');
     const isDesktopMenuClosed = DesktopMenu.classList.contains('inactive-desktop__menu');
-    const Capa=document.querySelector('#ActiveCapa').classList.add('capa');
+    const Capa=document.querySelector('#ActiveCapa');
     if (!isProductDEtailClosedShoppping){
+        shoppindCartContainer.classList.add('inactive-movil__menu');
+        DesktopMenu.classList.add('inactive-desktop__menu');
+        Capa.classList.add('capa');
         document.querySelector('.product-detail-close').addEventListener("click", function(){
             productDetail.classList.add('inactive-desktop__menu');
             Capa.classList.remove('capa');
@@ -175,7 +186,7 @@ function renderProducts(ArrayProducts){
     
         const productInfoFigure=document.createElement('Figure');
         const productImgCart=document.createElement('img');
-        productImgCart.setAttribute('src','./icons/bt_add_to_cart.svg' );
+        productImgCart.setAttribute('src','./icons/bt_added_to_cart_estruct.png');
        
         productInfoFigure.appendChild(productImgCart);
       
