@@ -11,9 +11,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="./AnimationBoton.css">
+        <link rel="stylesheet" href="./AnimationList.css">
         <title>YardSale: Tienda Online</title>
     </head>
     <body>
+        
         <!-- NAV ITEMS -->
         <nav>
             <img src="./icons/icon_menu.svg" alt="menu" class="burger-movil__menu">
@@ -22,32 +25,32 @@
             <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
 
             <ul>
-                <li>
-                <a href="/">All</a>
+                <li class="List-Nav__Items List">
+                <a class="Items" href="/">All</a>
                 </li>
-                <li>
-                <a href="/">Clothes</a>
+                <li class="List-Nav__Items List">
+                <a class="Items" href="/">Clothes</a>
                 </li>
-                <li>
-                <a href="/">Electronics</a>
+                <li class="List-Nav__Items List">
+                <a class="Items" href="/">Electronics</a>
                 </li>
-                <li>
-                <a href="/">Furnitures</a>
+                <li class="List-Nav__Items List">
+                <a class="Items" href="/">Furnitures</a>
                 </li>
-                <li>
-                <a href="/">Toys</a>
+                <li class="List-Nav__Items List">
+                <a class="Items" href="/">Toys</a>
                 </li>
-                <li>
-                <a href="/">Others</a>
+                <li class="List-Nav__Items List">
+                <a class="Items" href="/">Others</a>
                 </li>
             </ul>
             </div>
 
             <div class="navbar-right">
-            <ul>
+            <ul class="Container-list__Account">
                 <li class="navbar-email">platzi@example.com</li>
                 <li class="navbar-shopping-cart">
-                <img src="./icons/icon_shopping_cart.svg" alt="shopping cart">
+                <img src="./icons/icon_shopping_cart.svg" alt="shopping cart" class="shopping-card__img">
                 <div>2</div>
                 </li>
             </ul>
@@ -136,7 +139,7 @@
                 </figure>
                 <p>Bike</p>
                 <p>$30,00</p>
-                <img src="./icons/icon_close.png" alt="close">
+                <img src="./icons/icon_close.png" alt="close" class="Shopping-Cart__Close">
               </div>
         
               <div class="shopping-cart">
@@ -145,7 +148,7 @@
                 </figure>
                 <p>Bike</p>
                 <p>$30,00</p>
-                <img src="./icons/icon_close.png" alt="close">
+                <img src="./icons/icon_close.png" alt="close" class="Shopping-Cart__Close">
               </div>
         
               <div class="shopping-cart">
@@ -154,7 +157,7 @@
                 </figure>
                 <p>Bike</p>
                 <p>$30,00</p>
-                <img src="./icons/icon_close.png" alt="close">
+                <img src="./icons/icon_close.png" alt="close" class="Shopping-Cart__Close">
               </div>
         
               <div class="order">
@@ -164,8 +167,8 @@
                 <p>$560.00</p>
               </div>
         
-              <button class="primary-button">
-                Checkout
+              <button class="primary-button uno">
+                <span>Checkout</span>
               </button>
             </div>
           </div>
@@ -173,21 +176,26 @@
         <!-- /ASIDE -->
 
         <!-- ASIDE PRODUCT -->
-        <aside id="productDetail" class="inactive-desktop__menu">
-            <div class="product-detail-close">
-              <img src="./icons/icon_close.png" alt="close">
-            </div>
-            <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
-            <div class="product-info">
-              <p>$35,00</p>
-              <p>Bike</p>
-              <p>With its practical position, this bike also fulfills a decorative function, add your hall or workspace.</p>
-              <button class="primary-button add-to-cart-button">
-                <img src="./icons/bt_add_to_cart.svg" alt="add to cart">
-                Add to cart
-              </button>
-            </div>
-          </aside>
+        <div id="ActiveCapa"">
+          <aside id="productDetail" class="inactive-desktop__menu">
+            
+              <div class="product-detail-close">
+                <img src="./icons/icon_close.png" alt="close">
+              </div>
+              <img class="ImagenProduct" src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
+              <div class="product-info">
+                <p>$35,00</p>
+                <p>Bike</p>
+                <p>With its practical position, this <strong class="Strong-product__bike">bike</strong> also fulfills a decorative function, add your hall or workspace.</p>
+                <button class="Secondary-button add-to-cart-button" >
+                  <img class="ImgIcon" src="./icons/bt_add_to_cart.svg" alt="" id="ImgGreenLigth">
+                  <img class="ImgIcon DisplayNone" src="./icons/bt_add_to_cart_dark.png" alt="" id="ImgGreenDark" >
+
+                  <span>Add to cart</span>
+                </button>
+              </div>
+            </aside>
+        </div>
         <!-- /ASIDE PRODUCTS -->
 
         <!-- CARDS -->

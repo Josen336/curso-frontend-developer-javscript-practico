@@ -1,9 +1,10 @@
 // INACTIVE DESKTOP MENU
 const DesktopMenu = document.querySelector('.desktop-menu');
-
-document.querySelector('.navbar-email').addEventListener("click", function() {
+const Click  = document.querySelector('.navbar-email');
+document.querySelector('.navbar-email').addEventListener("click", function(e) {
+    console.log({e})
     DesktopMenu.classList.toggle('inactive-desktop__menu');
-    
+    const ClasAnimation=DesktopMenu.classList.toggle("animation");
     const isShoppingClosed= shoppindCartContainer.classList.contains('inactive-movil__menu');
     const isProductDetail = productDetail.classList.contains('inactive-desktop__menu');
     
@@ -14,7 +15,12 @@ document.querySelector('.navbar-email').addEventListener("click", function() {
         productDetail.classList.add('inactive-desktop__menu'); 
     }
 
-})
+});
+
+
+
+
+
 // /INACTIVE DESKTOP MENU
 
 
@@ -71,6 +77,7 @@ document.querySelector('.navbar-shopping-cart').addEventListener("click", functi
     };
     if(!isDesktopMenuClosed){
         DesktopMenu.classList.add('inactive-desktop__menu');
+        DesktopMenu.classList.remove('animation')
     };
 
     if(!isProductDetail){
@@ -92,10 +99,12 @@ function openProductDetailAside(){
     productDetail.classList.remove('inactive-desktop__menu');
     const isProductDEtailClosedShoppping = productDetail.classList.contains('inactive-desktop__menu');
     const isDesktopMenuClosed = DesktopMenu.classList.contains('inactive-desktop__menu');
-
+    const Capa=document.querySelector('#ActiveCapa').classList.add('capa');
     if (!isProductDEtailClosedShoppping){
         document.querySelector('.product-detail-close').addEventListener("click", function(){
             productDetail.classList.add('inactive-desktop__menu');
+            Capa.classList.remove('capa');
+            
         });
     }
     
@@ -185,6 +194,32 @@ function renderProducts(ArrayProducts){
 };
 
 renderProducts(productList);
+
+
+
+const ImgLigthGreen= document.querySelector('#ImgGreenLigth');
+const ImgDarkGreen = document.querySelector('#ImgGreenDark');
+
+document.querySelector('.Secondary-button').onmouseover = function(){
+    ImgLigthGreen.classList.add("DisplayNone");
+    ImgDarkGreen.classList.remove("DisplayNone");
+};
+
+document.querySelector('.Secondary-button').onmouseout =function(){
+    ImgLigthGreen.classList.remove("DisplayNone");
+    ImgDarkGreen.classList.add("DisplayNone");
+}
+
+
+
+
+
+
+
+
+    
+
+
 
 
 
